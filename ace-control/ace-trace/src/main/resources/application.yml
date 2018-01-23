@@ -1,13 +1,13 @@
 spring:
   rabbitmq:
-    host: ${RABBIT_MQ_HOST:127.0.0.1}
-    port: ${RABBIT_MQ_PORT:5672}
-    username: guest
-    password: guest
+    host: ${RABBIT_MQ_HOST:192.168.40.168}
+    port: ${RABBIT_MQ_PORT:5600}
+    username: feng
+    password: feng
   datasource:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/ag_zipkin?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
     username: root
-    password: 123456
+    password: feng
     driver-class-name: com.mysql.jdbc.Driver
     initialize: true
     continue-on-error: true

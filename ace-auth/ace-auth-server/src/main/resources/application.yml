@@ -44,8 +44,8 @@ spring:
             percentage: 1
 mybatis:
     basepackage: com.github.wxiaoqi.security.auth.mapper
-    xmlLocation: classpath:mapper/**/*.xml
-    mapper-locations: "classpath*:mapper/*.xml"
+    mapper-locations:
+      - "classpath*:mapper/*.xml"
 
 server:
     port: 9777 #启动端口

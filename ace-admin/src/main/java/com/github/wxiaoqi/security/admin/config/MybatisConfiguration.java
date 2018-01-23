@@ -123,26 +123,26 @@ public class MybatisConfiguration implements EnvironmentAware {
 
     @Override
     public void setEnvironment(Environment environment) {
-        this.propertyResolver = new RelaxedPropertyResolver(environment, null);
-        this.url = propertyResolver.getProperty("spring.datasource.url");
-        this.userName= propertyResolver.getProperty("spring.datasource.username");
-        this.password = propertyResolver.getProperty("spring.datasource.password");
-        this.driveClassName = propertyResolver.getProperty("spring.datasource.driver-class-name");
-        this.filters = propertyResolver.getProperty("spring.datasource.filters");
-        this.maxActive = propertyResolver.getProperty("spring.datasource.maxActive");
-        this.initialSize = propertyResolver.getProperty("spring.datasource.initialSize");
-        this.maxWait = propertyResolver.getProperty("spring.datasource.maxWait");
-        this.minIdle = propertyResolver.getProperty("spring.datasource.minIdle");
-        this.timeBetweenEvictionRunsMillis = propertyResolver.getProperty("spring.datasource.timeBetweenEvictionRunsMillis");
-        this.minEvictableIdleTimeMillis = propertyResolver.getProperty("spring.datasource.minEvictableIdleTimeMillis");
-        this.validationQuery = propertyResolver.getProperty("spring.datasource.validationQuery");
-        this.testWhileIdle = propertyResolver.getProperty("spring.datasource.testWhileIdle");
-        this.testOnBorrow = propertyResolver.getProperty("spring.datasource.testOnBorrow");
-        this.testOnReturn = propertyResolver.getProperty("spring.datasource.testOnReturn");
-        this.poolPreparedStatements = propertyResolver.getProperty("spring.datasource.poolPreparedStatements");
-        this.maxOpenPreparedStatements = propertyResolver.getProperty("spring.datasource.maxOpenPreparedStatements");
+        this.propertyResolver = new RelaxedPropertyResolver(environment, "spring.datasource.");
+        this.url = propertyResolver.getProperty("url");
+        this.userName= propertyResolver.getProperty("username");
+        this.password = propertyResolver.getProperty("password");
+        this.driveClassName = propertyResolver.getProperty("driver-class-name");
+        this.filters = propertyResolver.getProperty("filters");
+        this.maxActive = propertyResolver.getProperty("maxActive");
+        this.initialSize = propertyResolver.getProperty("initialSize");
+        this.maxWait = propertyResolver.getProperty("maxWait");
+        this.minIdle = propertyResolver.getProperty("minIdle");
+        this.timeBetweenEvictionRunsMillis = propertyResolver.getProperty("timeBetweenEvictionRunsMillis");
+        this.minEvictableIdleTimeMillis = propertyResolver.getProperty("minEvictableIdleTimeMillis");
+        this.validationQuery = propertyResolver.getProperty("validationQuery");
+        this.testWhileIdle = propertyResolver.getProperty("testWhileIdle");
+        this.testOnBorrow = propertyResolver.getProperty("testOnBorrow");
+        this.testOnReturn = propertyResolver.getProperty("testOnReturn");
+        this.poolPreparedStatements = propertyResolver.getProperty("poolPreparedStatements");
+        this.maxOpenPreparedStatements = propertyResolver.getProperty("maxOpenPreparedStatements");
         this.typeAliasesPackage = propertyResolver.getProperty("mybatis.typeAliasesPackage");
-        this.xmlLocation = propertyResolver.getProperty("mybatis.xmlLocation");
+        this.xmlLocation = propertyResolver.getProperty("xmlLocation");
     }
 
     @Bean

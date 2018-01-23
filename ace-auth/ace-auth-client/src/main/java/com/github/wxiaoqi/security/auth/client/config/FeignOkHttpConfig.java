@@ -3,6 +3,7 @@ package com.github.wxiaoqi.security.auth.client.config;
 import com.github.wxiaoqi.security.auth.client.interceptor.OkHttpTokenInterceptor;
 import feign.Feign;
 import okhttp3.ConnectionPool;
+import okhttp3.OkHttpClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -20,15 +21,14 @@ public class FeignOkHttpConfig {
 	@Autowired
 	OkHttpTokenInterceptor okHttpLoggingInterceptor;
 
-	private int feignOkHttpReadTimeout = 60;
-	private int feignConnectTimeout = 60;
-	private int feignWriteTimeout = 120;
-
 	@Bean
-	public okhttp3.OkHttpClient okHttpClient() {
-		return new okhttp3.OkHttpClient.Builder().readTimeout(feignOkHttpReadTimeout, TimeUnit.SECONDS).connectTimeout(feignConnectTimeout, TimeUnit.SECONDS)
+	public OkHttpClient okHttpClient() {
+		int feignOkHttpReadTimeout = 60;
+		int feignConnectTimeout = 60;
+		int feignWriteTimeout = 120;
+		return new OkHttpClient.Builder().readTimeout(feignOkHttpReadTimeout, TimeUnit.SECONDS).connectTimeout(feignConnectTimeout, TimeUnit.SECONDS)
 				.writeTimeout(feignWriteTimeout, TimeUnit.SECONDS).connectionPool(new ConnectionPool())
-				 .addInterceptor(okHttpLoggingInterceptor)
+				.addInterceptor(okHttpLoggingInterceptor)
 				.build();
 	}
 }

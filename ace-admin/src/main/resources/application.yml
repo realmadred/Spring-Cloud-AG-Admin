@@ -30,6 +30,7 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
+        xmlLocation: "classpath*:mapper/*.xml"
     rabbitmq:
         host: ${RABBIT_MQ_HOST:192.168.40.168}
         port:  ${RABBIT_MQ_PORT:5600}
@@ -41,8 +42,7 @@ spring:
       sampler:
         percentage: 1
 mybatis:
-    basepackage: com.github.wxiaoqi.security.admin.mapper
-    xmlLocation: classpath:mapper/**/*.xml
+    base-package: com.github.wxiaoqi.security.admin.mapper
 
 server:
     port: 8762
