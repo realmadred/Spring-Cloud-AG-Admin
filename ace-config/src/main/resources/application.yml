@@ -5,7 +5,7 @@ spring:
         config:
             server:
                 git:
-                    uri: https://git.oschina.net/geek_qi/AG-Config.git
+                    uri: https://gitee.com/realmadridlf/AG-Config.git
 
 server:
     port: 8750 #启动端口

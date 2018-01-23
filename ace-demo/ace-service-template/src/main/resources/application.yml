@@ -10,10 +10,10 @@ spring:
         time-zone: GMT+8
         default-property-inclusion: non_null
     rabbitmq:
-        host: localhost
-        port: 5672
-        username: guest
-        password: guest
+        host: 192.168.40.168
+        port: 5600
+        username: feng
+        password: feng
 
 server:
     port: 9990

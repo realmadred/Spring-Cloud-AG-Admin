@@ -14,10 +14,10 @@ spring:
         pool:
             max-active: 20
     rabbitmq:
-        host: ${RABBIT_MQ_HOST:localhost}
-        port:  ${RABBIT_MQ_PORT:5672}
-        username: guest
-        password: guest
+        host: ${RABBIT_MQ_HOST:192.168.40.168}
+        port:  ${RABBIT_MQ_PORT:5600}
+        username: feng
+        password: feng
     zipkin:
       enabled: true
     sleuth:
